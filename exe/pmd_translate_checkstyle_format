@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'pmd_translate_checkstyle_format'
+require 'pmd_translate_checkstyle_format/cli'
+
+PmdTranslateCheckstyleFormat::CLI.start

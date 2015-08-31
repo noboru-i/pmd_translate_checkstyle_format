@@ -1,5 +1,5 @@
 require "pmd_translate_checkstyle_format/version"
+require "pmd_translate_checkstyle_format/translate"
 
 module PmdTranslateCheckstyleFormat
-  # Your code goes here...
 end
