@@ -1,8 +1,11 @@
 # PmdTranslateCheckstyleFormat
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pmd_translate_checkstyle_format`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Gem Version](https://badge.fury.io/rb/pmd_translate_checkstyle_format.svg)](http://badge.fury.io/rb/pmd_translate_checkstyle_format)
+[![Build Status](https://travis-ci.org/noboru-i/pmd_translate_checkstyle_format.svg?branch=master)](https://travis-ci.org/noboru-i/pmd_translate_checkstyle_format)
+[![Code Climate](https://codeclimate.com/github/noboru-i/pmd_translate_checkstyle_format/badges/gpa.svg)](https://codeclimate.com/github/noboru-i/pmd_translate_checkstyle_format)
+[![Coverage Status](https://coveralls.io/repos/noboru-i/pmd_translate_checkstyle_format/badge.svg)](https://coveralls.io/r/noboru-i/pmd_translate_checkstyle_format)
 
-TODO: Delete this and the text above, and describe your gem
+Translate pmd format into checkstyle format.
 
 ## Installation
 
@@ -22,7 +25,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Use pipe
+
+```
+cat pmd.xml | pmd_translate_checkstyle_format translate
+```
+
+### Use command-line option
+
+```
+pmd_translate_checkstyle_format translate --file="pmd.xml"
+```
 
 ## Development
 
