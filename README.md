@@ -29,12 +29,14 @@ Or install it yourself as:
 
 ```
 cat pmd.xml | pmd_translate_checkstyle_format translate
+cat cpd.xml | pmd_translate_checkstyle_format translate --cpd-translate # cpd translate
 ```
 
 ### Use command-line option
 
 ```
 pmd_translate_checkstyle_format translate --file="pmd.xml"
+pmd_translate_checkstyle_format translate --file="cpd.xml" --cpd-translate # cpd translate
 ```
 
 ## Development
