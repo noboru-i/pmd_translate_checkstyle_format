@@ -6,10 +6,15 @@ module PmdTranslateCheckstyleFormat
     desc 'translate', 'Exec Translate'
     option :data
     option :file
+    option 'cpd-translate', type: :boolean
     def translate
       data = fetch_data(options)
       xml = parse(data)
-      checkstyle = trans(xml)
+      if options['cpd-translate']
+        checkstyle = trans_cpd(xml)
+      elsif
+        checkstyle = trans(xml)
+      end
       checkstyle.write(STDOUT, 2)
     end
 
