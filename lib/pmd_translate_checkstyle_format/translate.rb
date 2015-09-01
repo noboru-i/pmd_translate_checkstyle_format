@@ -31,13 +31,24 @@ module PmdTranslateCheckstyleFormat
             })
           file_element.add_element("error", {
             'line' => violation.attributes['beginline'],
-            'severity' => '',
-            'message' => "[#{violation.attributes['rule']}] #{violation.strip}\\n#{violation.attributes['externalInfoUrl']}"
+            'severity' => get_severity(violation.attributes['priority'].to_i),
+            'message' => "[#{violation.attributes['rule']}] #{violation.strip}\n#{violation.attributes['externalInfoUrl']}"
             })
         end
       end
 
       doc
+    end
+
+    def get_severity(priority)
+      case priority
+      when 1, 2
+        'error'
+      when 3, 4
+        'warning'
+      when 5
+        'info'
+      end
     end
   end
 end
