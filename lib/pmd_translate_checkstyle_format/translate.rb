@@ -1,4 +1,6 @@
 require 'nori'
+require 'rexml/document'
+require 'pathname'
 
 module PmdTranslateCheckstyleFormat
   module Translate
@@ -9,7 +11,6 @@ module PmdTranslateCheckstyleFormat
     end
 
     def trans(xml)
-      require 'rexml/document'
       doc = REXML::Document.new
       doc << REXML::XMLDecl.new('1.0', 'UTF-8')
 
@@ -39,7 +40,6 @@ module PmdTranslateCheckstyleFormat
     end
 
     def trans_cpd(xml)
-      require 'rexml/document'
       doc = REXML::Document.new
       doc << REXML::XMLDecl.new('1.0', 'UTF-8')
 
