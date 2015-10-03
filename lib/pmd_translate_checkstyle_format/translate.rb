@@ -16,6 +16,7 @@ module PmdTranslateCheckstyleFormat
 
       checkstyle = doc.add_element("checkstyle")
       if xml['pmd'].blank? || xml['pmd']['file'].blank?
+        set_dummy(checkstyle)
         return doc
       end
 
@@ -45,6 +46,7 @@ module PmdTranslateCheckstyleFormat
 
       checkstyle = doc.add_element("checkstyle")
       if xml['pmd_cpd'].blank? || xml['pmd_cpd']['duplication'].blank?
+        set_dummy(checkstyle)
         return doc
       end
 
@@ -85,6 +87,14 @@ module PmdTranslateCheckstyleFormat
         Pathname.new(item['@path']).relative_path_from(Pathname.new(Dir.pwd)).to_s
       }
       "[PMD-CPD] #{duplication['@lines']} lines duplicated.\n#{file_names.join("\n")}"
+    end
+
+    def set_dummy(checkstyle)
+      checkstyle.add_element('file',
+                             'name' => 'dummy.java'
+                            )
+
+      checkstyle
     end
   end
 end
