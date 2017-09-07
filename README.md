@@ -39,6 +39,15 @@ pmd_translate_checkstyle_format translate --file="pmd.xml"
 pmd_translate_checkstyle_format translate --file="cpd.xml" --cpd-translate # cpd translate
 ```
 
+### Use from ruby script
+
+```ruby
+require 'pmd_translate_checkstyle_format'
+pmd_xml = ::PmdTranslateCheckstyleFormat::Script.translate('<?xml ...')
+# or
+pmd_cpd_xml = ::PmdTranslateCheckstyleFormat::Script.translate_cpd('<?xml ...')
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -53,4 +62,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
