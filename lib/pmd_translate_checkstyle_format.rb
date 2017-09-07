@@ -1,5 +1,6 @@
 require "pmd_translate_checkstyle_format/version"
 require "pmd_translate_checkstyle_format/translate"
+require "pmd_translate_checkstyle_format/script"
 
 module PmdTranslateCheckstyleFormat
 end
